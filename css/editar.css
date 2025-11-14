@@ -1,0 +1,229 @@
+/* ===== General ===== */
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#0A192F;
+  color:#E6F1FF;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.pids-wrap{
+  width:min(1100px,92vw);
+  margin:0 auto;
+}
+
+/* ===== HEADER ===== */
+.pids-header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  width:100%;
+  background:#0A192F;
+  border-bottom:none;
+  box-shadow:0 2px 0 rgba(0,0,0,.3);
+}
+.pids-header .pids-wrap{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:12px 0;
+}
+.pids-logo{ height:100px; width:auto; }
+.pids-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#E6F1FF;
+  text-decoration:none;
+}
+.pids-brand-text-big{
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:.8px;
+  color:#A8B2D1;
+}
+.pids-nav{
+  margin-left:auto;
+  display:flex;
+  gap:16px;
+}
+.pids-nav a{
+  color:#E6F1FF;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+}
+.pids-nav a:hover,
+.pids-nav a.active{
+  background:#112240;
+}
+.pids-a11y-btn{
+  margin-left:8px;
+  border:1px solid #64FFDA;
+  background:transparent;
+  color:#64FFDA;
+  border-radius:8px;
+  padding:6px 10px;
+  cursor:pointer;
+}
+
+/* ===== PANEL MAIN ===== */
+.panel-main{
+  flex:1;
+  padding:40px 0 60px;
+}
+
+/* Encabezado del panel */
+.panel-header{
+  margin-top:30px;
+  margin-bottom:18px;
+  text-align:left;
+}
+.panel-header h1{
+  font-size:28px;
+  color:#64FFDA;
+  margin:0 0 6px;
+}
+.panel-header p{
+  margin:0;
+  color:#A8B2D1;
+  font-size:15px;
+}
+.btn-add-top{
+  margin-top:16px;
+}
+
+/* ===== Tarjeta CRUD ===== */
+.panel-card{
+  margin-top:10px;
+  background:#112240;
+  border-radius:16px;
+  padding:22px 20px 26px;
+  box-shadow:0 6px 20px rgba(0,0,0,.35);
+}
+.panel-card h2{
+  margin:0 0 14px;
+  color:#64FFDA;
+  font-size:22px;
+}
+
+/* ===== Tabla CRUD ===== */
+.crud-table-wrapper{
+  overflow-x:auto;
+}
+.crud-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+  font-size:14px;
+}
+.crud-table thead{
+  background:#0A192F;
+}
+.crud-table th,
+.crud-table td{
+  padding:10px 8px;
+  border-bottom:1px solid #1f355a;
+  text-align:left;
+}
+.crud-table th{
+  color:#E6F1FF;
+  font-weight:600;
+  font-size:14px;
+}
+.crud-table tr:nth-child(even){
+  background:#0f223f;
+}
+.crud-table tr:nth-child(odd){
+  background:#112240;
+}
+
+/* Fila vacía (placeholder sin BD) */
+.empty-row td{
+  text-align:center;
+  color:#A8B2D1;
+  font-style:italic;
+}
+
+/* ===== Botones ===== */
+.btn{
+  font-size:14px;
+  border-radius:10px;
+  padding:8px 14px;
+  border:0;
+  cursor:pointer;
+  font-weight:600;
+  font-family:inherit;
+  transition:background .2s ease, transform .1s ease, box-shadow .1s ease;
+}
+
+.btn-primary{
+  background:#64FFDA;
+  color:#0A192F;
+  box-shadow:0 3px 10px rgba(0,0,0,.3);
+}
+.btn-primary:hover{
+  background:#57e6c3;
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(0,0,0,.35);
+}
+
+/* (si más adelante vuelves a usar botones pequeños)
+.btn-small{
+  padding:6px 10px;
+  font-size:13px;
+  margin-right:6px;
+}
+.btn-edit{ background:#0288D1; color:#E6F1FF; }
+.btn-edit:hover{ background:#0095ff; }
+.btn-delete{ background:#ff4d4d; color:#fff; }
+.btn-delete:hover{ background:#ff3434; }
+*/
+
+/* ===== FOOTER ===== */
+.pids-footer{
+  background:#0A192F;
+  border-top:1px solid #112240;
+}
+.pids-footer-copy{
+  padding:14px 0 18px;
+  text-align:center;
+  color:#A8B2D1;
+  font-size:14px;
+}
+
+/* ===== MODO A+ ===== */
+body.pids-a11y-on{
+  font-size:120%;
+  line-height:1.7;
+  letter-spacing:.6px;
+}
+body.pids-a11y-on h1{ font-size:1.35em !important; }
+body.pids-a11y-on h2{ font-size:1.25em !important; }
+body.pids-a11y-on p,
+body.pids-a11y-on th,
+body.pids-a11y-on td{
+  font-size:1.05em !important;
+}
+body.pids-a11y-on .panel-card{
+  transform:scale(1.02);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px){
+  .panel-header{
+    text-align:center;
+  }
+}
+@media (max-width: 640px){
+  .pids-brand-text-big{
+    font-size:18px;
+  }
+  .panel-card{
+    padding:18px 14px 20px;
+  }
+}

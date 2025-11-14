@@ -1,0 +1,210 @@
+/* ======== CONFIGURACIÓN GENERAL ======== */
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+
+:root{
+  --bg:#0A192F;
+  --text:#E6F1FF;
+  --muted:#A8B2D1;
+  --accent:#64FFDA;
+  --card:#112240;
+  --shadow: rgba(0,0,0,.12);
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.pids-wrap{ width:min(1100px,92vw); margin:0 auto; }
+
+a{ color: var(--accent); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+/* ======== HEADER ======== */
+.pids-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: var(--bg);
+  box-shadow: 0 2px 0 var(--shadow);
+}
+.pids-header .pids-wrap{
+  display:flex; align-items:center; gap:16px; padding:12px 0;
+}
+
+.pids-logo{ height:100px; width:auto; }
+.pids-brand{ display:flex; align-items:center; gap:12px; color:var(--text); }
+.pids-brand-text-big{
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: .8px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.pids-nav{ margin-left:auto; display:flex; gap:16px; }
+.pids-nav a{
+  color:var(--text); text-decoration:none; padding:8px 10px; border-radius:8px;
+}
+.pids-nav a:hover{ background:var(--card); }
+
+.pids-a11y-btn{
+  margin-left:8px; border:1px solid var(--accent);
+  background:transparent; color:var(--accent);
+  border-radius:8px; padding:6px 10px; cursor:pointer;
+}
+
+/* ======== SERVICIOS (LOGIN) ======== */
+.services-section{
+  background: var(--bg);
+  padding: 40px 0 70px;
+}
+
+.section-title{
+  text-align: center;
+  font-size: 36px;
+  color: var(--accent);
+  margin: 0 0 30px;
+  letter-spacing: 1px;
+}
+.section-title::after{
+  content:"";
+  display:block;
+  width:80px;
+  height:3px;
+  background:var(--accent);
+  margin:12px auto 0;
+  border-radius:3px;
+  opacity:0.6;
+}
+
+.pids-features{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:16px;
+}
+
+.pids-card{
+  background:var(--card);
+  border-radius:14px;
+  padding:24px;
+  color:var(--text);
+  text-align:center;
+  box-shadow:0 4px 14px rgba(2,10,30,.25);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.pids-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* ======== LOGIN FORM ======== */
+.login-card {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.login-card h3 {
+  color: var(--accent);
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.login-form label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: transparent;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.login-form input::placeholder {
+  color: var(--muted);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* ======== BOTONES ======== */
+.pids-btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#0A192F;
+  font-weight:700;
+  padding:10px 16px;
+  border-radius:10px;
+  border:0;
+  cursor:pointer;
+  transition: background .2s ease;
+}
+.pids-btn:hover{ filter:brightness(0.95); }
+
+.pids-btn-outline{
+  background:transparent;
+  border:1px solid var(--accent);
+  color:var(--text);
+}
+.pids-btn-outline:hover{
+  background:rgba(100,255,218,0.1);
+}
+
+/* ======== FOOTER ======== */
+.pids-footer{
+  background:var(--bg);
+  color:var(--text);
+  border-top:1px solid #0b274d;
+}
+.pids-footer-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:16px;
+  padding:24px 0;
+}
+.pids-footer h3{ margin:0 0 8px; color:var(--text); }
+.pids-footer-copy{
+  border-top:1px solid #0b274d;
+  padding:14px 0 20px;
+  color:var(--muted);
+  font-size:14px;
+  text-align:center;
+}
+
+/* ======== MODO ACCESIBILIDAD ======== */
+body.pids-a11y-on {
+  font-size: 120%;
+  line-height: 1.7;
+  letter-spacing: 0.6px;
+}
+body.pids-a11y-on p,
+body.pids-a11y-on label { color: #ffffff !important; }
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px){
+  .pids-brand-text-big{ font-size:20px; }
+  .section-title{ font-size:28px; }
+  .login-card{ padding:18px; }
+}
