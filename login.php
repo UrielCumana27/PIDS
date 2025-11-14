@@ -1,5 +1,11 @@
 <?php
 session_start();
+$adminActivo = isset($_SESSION['admin_id']);
+
+if ($adminActivo) {
+    header("Location: editar.php");
+    exit;
+}
 require_once "config.php"; // conexión a pids_db
 
 $error = "";

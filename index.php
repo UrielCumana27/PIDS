@@ -1,3 +1,8 @@
+<?php
+session_start();
+$adminActivo = isset($_SESSION['admin_id']);
+?>
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -18,10 +23,18 @@
         </span>
       </a>
       <nav class="pids-nav" aria-label="Navegación principal">
-        <a href="index.php">Inicio</a>
-        <a href="guias.php">Guías</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+                <a href="index.php">Inicio</a>
+                <a href="guias.php" class="active">Guías</a>
+                <a href="contacto.php">Contacto</a>
+
+                <!-- 👇 SOLO SE MUESTRA SI EL ADMIN ESTÁ LOGUEADO -->
+                <?php if ($adminActivo): ?>
+                    <a href="editar.php" class="pids-admin-btn"
+                       style="background:#0A192F; padding:8px 14px; border-radius:6px; color:aqua; margin-left:10px;">
+                        Admin
+                    </a>
+                <?php endif; ?>
+            </nav>
       <button class="pids-a11y-btn" id="btnA11y" aria-label="Alternar alto contraste y tamaño de fuente">A+</button>
     </div>
   </header>

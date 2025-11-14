@@ -33,6 +33,7 @@ if (!isset($_SESSION['admin_id'])) {
         <a href="guias.php">Guías</a>
         <a href="contacto.php">Contacto</a>
         <a href="editar.php" class="active">Admin</a>
+        <a href="logout.php">Cerrar</a>
       </nav>
       <button class="pids-a11y-btn" id="btnA11y">A+</button>
     </div>
