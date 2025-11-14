@@ -1,3 +1,7 @@
+<?php
+session_start();
+$error = isset($_GET['error']) ? $_GET['error'] : "";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -38,7 +42,9 @@
         <div class="pids-features" style="justify-items:center;">
           <div class="pids-card login-card">
             <h3>Acceso a la plataforma</h3>
-
+            <?php if (!empty($error)): ?>
+            <p class="error-msg"><?php echo htmlspecialchars($error); ?></p>
+            <?php endif; ?>
             <form action="login.php" method="POST" class="login-form" autocomplete="off" novalidate>
               <label for="usuario">Usuario</label>
               <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" required>

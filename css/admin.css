@@ -2,6 +2,12 @@
 * { box-sizing: border-box; }
 html, body { margin:0; padding:0; }
 
+.error-msg {
+  color: #ff4d4d;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
 :root{
   --bg:#0A192F;
   --text:#E6F1FF;

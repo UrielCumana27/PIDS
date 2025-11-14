@@ -15,20 +15,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows == 1) {
-        $stmt->bind_result($id, $hashed_password);
-        $stmt->fetch();
+    $stmt->bind_result($id, $hashed_password);
+    $stmt->fetch();
 
-        // Verificar contraseña
-        if (hash('sha256', $password) === $hashed_password) {
-            $_SESSION['usuario'] = $usuario;
-            $_SESSION['id'] = $id;
-            header("Location: dashboard.php");
-            exit();
-        } else {
-            $error = "Usuario o contraseña incorrectos.";
-        }
+    if (hash('sha256', $password) === $hashed_password) {
+        $_SESSION['usuario'] = $usuario;
+        $_SESSION['id'] = $id;
+        header("Location: editar.php");
+        exit();
     } else {
-        $error = "Usuario o contraseña incorrectos.";
+        header("Location: admin.php?error=" . urlencode("Usuario o contraseña incorrectos."));
+        exit();
+    }
+    } else {
+    header("Location: admin.php?error=" . urlencode("Usuario o contraseña incorrectos."));
+    exit();
     }
 
     $stmt->close();
