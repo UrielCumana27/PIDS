@@ -131,7 +131,7 @@
       </div>
       <div>
         <h3>Administración</h3>
-        <li><a href="admin.php">Login Admin</a></li>
+        <li><a href="login.php">Login Admin</a></li>
       </div>
     </div>
     <div class="pids-wrap pids-footer-copy">

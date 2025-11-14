@@ -1,12 +1,12 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "pids_db";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "pids_db"; // O el nombre que de verdad tenga tu base
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+    die("Conexión fallida: " . $conn->connect_error);
 }
 ?>
